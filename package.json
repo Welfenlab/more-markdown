@@ -1,10 +1,11 @@
 {
-  "name": "@more-markdown/more-markdown",
-  "version": "0.1.0",
+  "name": "more-markdown",
+  "version": "0.1.1",
   "description": "A markdown renderer that supports post-render transformations",
   "main": "lib/more_markdown.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish" : "node node_modules/gulp/bin/gulp.js"
   },
   "contributors" : [
     "Maximilian Klein <dasmaxl@gmail.com> (https://github.com/LittleHelicase)",
