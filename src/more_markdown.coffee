@@ -22,10 +22,16 @@ finishOnceAsync = (cbo) ->
 swap = (active, buffer) ->
   active.removeAttribute "activeBuffer"
   active.setAttribute "invisibleBuffer", ""
-  active.style.display = "none"
+  active.style.position = "absolute";
+  active.style.left = "-100%";
+  active.style.top = "-100%";
+  active.style.zIndex = -1000000;
   buffer.setAttribute "activeBuffer", ""
   buffer.removeAttribute "invisibleBuffer"
-  buffer.style.display = "block"
+  buffer.style.position = ""
+  buffer.style.top = "";
+  buffer.style.left = "";
+  buffer.style.zIndex = 0;
 
   # creates an advanced markdown processor for that specific dom element
   # does some magic to remove flickering etc.

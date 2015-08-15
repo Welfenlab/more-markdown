@@ -1,6 +1,6 @@
 {
   "name": "more-markdown",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A markdown renderer that supports post-render transformations",
   "main": "lib/more_markdown.js",
   "scripts": {
