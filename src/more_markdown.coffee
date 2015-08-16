@@ -1,5 +1,5 @@
 MarkdownIt = require 'markdown-it'
-cbo = require './callback_objects'
+cbo = require '@more-markdown/callback-objects'
 PostProcessors = require './post_processors'
 _ = require 'lodash'
 
