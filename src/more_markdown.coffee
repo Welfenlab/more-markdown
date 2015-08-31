@@ -23,8 +23,8 @@ swap = (active, buffer) ->
   active.removeAttribute "activeBuffer"
   active.setAttribute "invisibleBuffer", ""
   active.style.position = "absolute";
-  active.style.left = "-100%";
-  active.style.top = "-100%";
+  active.style.left = "-1000%";
+  active.style.top = "-1000%";
   active.style.zIndex = -1000000;
   buffer.setAttribute "activeBuffer", ""
   buffer.removeAttribute "invisibleBuffer"
