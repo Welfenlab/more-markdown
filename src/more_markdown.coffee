@@ -20,6 +20,9 @@ finishOnceAsync = (cbo) ->
 
 # swaps the current buffer with the currently processed one
 swap = (active, buffer) ->
+  # due to missing font metrics the "backbuffer" has to be visible
+  # according to a chrome dev there are people working on at
+  # https://github.com/w3c/css-houdini-drafts
   active.removeAttribute "activeBuffer"
   active.setAttribute "invisibleBuffer", ""
   active.style.position = "absolute";
