@@ -4,7 +4,7 @@ PostProcessors = require './post_processors'
 _ = require 'lodash'
 
 createDoubleBuffer = (element_id, config) ->
-  element = document.querySelector "##{element_id}"
+  element = document.getElementById element_id
   element.innerHTML = "<div activeBuffer></div><div invisibleBuffer></div>"
   return element
 
