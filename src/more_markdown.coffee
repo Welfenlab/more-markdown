@@ -104,4 +104,10 @@ module.exports =
       mdInstance.domReady.fire()
 
       # start post-processing
-      postProcessors.runProcessors buffer, _.partial swap, active, buffer
+      postProcessors.runProcessors buffer, (err, result) ->
+        if(err)
+          if(err.stack)
+            console.error(err.stack)
+          else
+            console.log(err)
+        swap active, buffer
