@@ -4,7 +4,7 @@
   "description": "A markdown renderer that supports post-render transformations",
   "main": "lib/more_markdown.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"no test specified\"",
     "prepublish": "node node_modules/gulp/bin/gulp.js"
   },
   "contributors": [
