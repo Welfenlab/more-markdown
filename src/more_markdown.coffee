@@ -84,6 +84,24 @@ module.exports =
 
       # start parsing
       mdInstance.parseInline processedMD
+    processMarkdown: (markdown) ->
+      # clear all postProcessors
+      postProcessors.clear()
+
+      # run the markdown through all preprocessors
+      # (considered bad.. but currently necessary for single $ mathjax escapes)
+      processedMD = _.reduce preprocessors, ((md, p) -> p md), markdown
+
+      # start rendering
+      html = mdInstance.render processedMD
+
+      # start post-processing
+      postProcessors.runProcessors buffer, (err, result) ->
+        if(err)
+          if(err.stack)
+            console.error(err.stack)
+          else
+            console.log(err)
     render: (markdown) ->
       # ensure that we have a valid element
       element = element or createDoubleBuffer element_id
