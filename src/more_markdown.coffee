@@ -29,12 +29,14 @@ swap = (active, buffer) ->
   active.style.left = "-1000%";
   active.style.top = "-1000%";
   active.style.zIndex = -1000000;
+  active.style.opacity = "1";
   buffer.setAttribute "activeBuffer", ""
   buffer.removeAttribute "invisibleBuffer"
   buffer.style.position = ""
   buffer.style.top = "";
   buffer.style.left = "";
   buffer.style.zIndex = 0;
+  buffer.style.opacity = "0";
 
   # creates an advanced markdown processor for that specific dom element
   # does some magic to remove flickering etc.
