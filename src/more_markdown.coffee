@@ -40,7 +40,7 @@ swap = (active, buffer) ->
 
   # creates an advanced markdown processor for that specific dom element
   # does some magic to remove flickering etc.
-module.exports =
+API =
   create: (element_id, config) ->
     activeProcessors = config.processors
 
@@ -131,3 +131,8 @@ module.exports =
           else
             console.log(err)
         swap active, buffer
+  process: (markdown, config) ->
+    API.create("", config).processMarkdown(markdown)
+
+
+module.exports = API
