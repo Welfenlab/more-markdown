@@ -86,7 +86,7 @@ API =
 
       # start parsing
       mdInstance.parseInline processedMD
-    processMarkdown: (markdown) ->
+    processMarkdown: (markdown, finishedCb) ->
       # clear all postProcessors
       postProcessors.clear()
 
@@ -97,8 +97,11 @@ API =
       # start rendering
       html = mdInstance.render processedMD
 
+      buffer = null
+
       # start post-processing
       postProcessors.runProcessors buffer, (err, result) ->
+        finishedCb(err)
         if(err)
           if(err.stack)
             console.error(err.stack)
@@ -131,8 +134,8 @@ API =
           else
             console.log(err)
         swap active, buffer
-  process: (markdown, config) ->
-    API.create("", config).processMarkdown(markdown)
+  process: (markdown, config, finishedCb) ->
+    API.create("", config).processMarkdown(markdown, finishedCb)
 
 
 module.exports = API

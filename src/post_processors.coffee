@@ -3,7 +3,10 @@ async = require 'async'
 
 processById = (processor, domElement, done) ->
   idSelector = "[data-element-id=#{processor.id}]"
-  subElement = domElement.querySelector idSelector
+  if domElement?
+    subElement = domElement.querySelector idSelector
+  else
+    subElement = null
   processor.callback subElement, done
 
 processAll = (processor, domElement, done) ->
